@@ -13,6 +13,7 @@ static char randomCharList[5] = {'k','5','a','$','\\'};
 
 // Picks one random character from the provided character list
 // and returns the character
+// Parameters: charList - list of possible characters, size
 static char pickChar(char *charList, int size){
     // Gets a random number between 0 and size
     int n = rand()%size;
@@ -22,6 +23,7 @@ static char pickChar(char *charList, int size){
 
 // Returns a random character based on the given probability
 // or returns a space if otherwise.
+// Parameters: chance - chance that a random character will be returned, charList, size
 static char genRandomChar(double chance, char *charList, int size){
 
     // Generate random number between 0 and 1
@@ -37,6 +39,7 @@ static char genRandomChar(double chance, char *charList, int size){
 
 // Allocates memory for the canvas and fills each position with
 // either a space or a random charcter.
+// Parameters: width, height (self explanitory)
 char **createCanvas(int width, int height){
 
     // Generate first layer of the character array
@@ -60,6 +63,7 @@ char **createCanvas(int width, int height){
 }
 
 // Used to print every character in the canvas
+// Parameters: Canvas - pointer to the character canvas, width, height
 void printCanvas(char **canvas, int width, int height){
     for(int row = 0; row < height; row++){
         for(int column = 0; column < width; column++){
@@ -70,6 +74,7 @@ void printCanvas(char **canvas, int width, int height){
 }
 
 // Frees all memory allocated for the canvas
+// Parameters: cavnas, width, height
 void freeCanvas(char **canvas, int width, int height){
 
     // Free every row
